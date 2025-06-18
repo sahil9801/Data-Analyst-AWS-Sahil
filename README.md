@@ -1,11 +1,7 @@
 # Cloud-Native Academic Data Platform on AWS
 
-![AWS Academic Data Platform Architecture](https://d1.awsstatic.com/diagrams/DataAnalytics.8f7b0d1d5a3a0e8f0e9c8b0f0e9c8b0f0e9c8b0f.png)
-
 ## Introduction
 This project implements a comprehensive cloud-native academic data platform on AWS, designed to process and analyze educational data for actionable insights. The platform handles 2.7 million student records daily with 99.95% uptime while reducing infrastructure costs by 44% compared to on-premise solutions.
-
-[![Video Walkthrough](https://img.youtube.com/vi/viq8Hz9qLmM/0.jpg)](https://www.youtube.com/watch?v=viq8Hz9qLmM)
 
 ## Architecture Overview
 ```mermaid
@@ -55,8 +51,6 @@ pie
 - **Cost Efficiency**: $0.44/DPU-hour
 - **Error Reduction**: 89% pre vs. post-cleaning
 
-![AWS Glue DataBrew Interface](https://d1.awsstatic.com/product-marketing/Glue/glue-databrew/Product-Page-Diagram_AWS-Glue-DataBrew.9d9d3a0b3f5d8b5b3c9b3f5d8b5b3c9b.png)
-
 ## Infrastructure Implementation
 
 ### VPC Security Architecture
@@ -82,8 +76,6 @@ graph LR
 - **NACL Rules**: Deny all except Glue/S3 IP ranges
 - **Flow Logs**: Enabled to CloudWatch
 - **Encryption**: AES-256 for S3 and EBS volumes
-
-![AWS VPC Architecture](https://d1.awsstatic.com/security-center/architecture_diagrams/aws-secure-environment-architecture.1b3b1b1b1b1b1b1b1b1b1b1b1b1b1b1b.png)
 
 ### IAM Access Matrix
 | Role | S3 Access | Glue Access | EC2 Access |
@@ -114,25 +106,6 @@ ORDER BY completion_rate DESC;
 | Computer Science | 14.2 | 92.7% | B+ |
 | Mathematics | 13.8 | 89.3% | B |
 | Engineering | 13.5 | 87.6% | B- |
-
-### QuickSight Visualizations
-
-**Completion Rate by Department:**
-![Completion Rate Visualization](https://via.placeholder.com/800x400?text=Computer+Science+92.7%25+Mathematics+89.3%25+Engineering+87.6%25)
-
-**Credit Distribution:**
-```mermaid
-bar
-    title Credits Earned Distribution
-    x-axis Credits
-    y-axis % Students
-    bar 12-15 : 42.3
-    bar 16-18 : 31.2
-    bar 19+ : 26.5
-```
-
-**Department Performance Heatmap:**
-![Department Performance Heatmap](https://via.placeholder.com/800x400?text=Engineering+High+Drop+Rate+CS+High+Grades)
 
 ## Cost Optimization Analysis
 
@@ -167,8 +140,6 @@ bar
 - Scale-out: CPU > 70% for 5 mins
 - Scale-in: CPU < 30% for 20 mins
 - *Result: 45% reduction in idle compute costs*
-
-![AWS Cost Management Dashboard](https://d1.awsstatic.com/product-marketing/CloudWatch/product-page-diagram_Amazon-CloudWatch.1b3b1b1b1b1b1b1b1b1b1b1b1b1b1b1b.png)
 
 ## AWS Service Integration
 
@@ -253,7 +224,6 @@ pie
 *Findings: 100% least-privilege compliance through IAM Access Analyzer*
 
 ### Global Infrastructure Optimization
-![Regional Performance Comparison](https://via.placeholder.com/800x400?text=us-east-1+Latency+23ms+vs+us-west-2+46ms)
 - **Region**: us-east-1 (N. Virginia)
 - **AZs**: 3 Availability Zones
 - **Edge Locations**: CloudFront integration for dashboards
@@ -273,35 +243,3 @@ pie
 - **Performance**: Sub-second query response for 90% of Athena queries
 - **Cost Efficiency**: $0.023/GB storage cost
 
-### APA References
-Amazon Web Services. (2023). *AWS Well-Architected Framework*. https://aws.amazon.com/architecture/well-architected  
-Johnson, M. (2022). *Cloud-Native Data Platforms in Education*. Journal of Educational Technology, 45(3), 112-129. doi:10.1080/15391523.2022.2071707  
-Verma, A. (2023). *Optimizing Academic Analytics on AWS*. Proceedings of the EDUCAUSE Annual Conference, 45-53.
-
----
-
-**GitHub Repository Structure:**
-```
-/academic-data-platform
-├── diagrams
-│   ├── architecture.png
-│   ├── vpc-design.png
-│   └── cost-dashboard.png
-├── src
-│   ├── lambda
-│   │   └── trigger_databrew.py
-│   ├── glue
-│   │   └── academic_cleaning_recipe.json
-│   └── athena
-│       └── academic_queries.sql
-├── docs
-│   ├── implementation_guide.md
-│   └── user_manual.md
-├── terraform
-│   ├── main.tf
-│   ├── variables.tf
-│   └── outputs.tf
-└── README.md
-```
-
-For the complete implementation code and detailed documentation, visit the [GitHub Repository](https://github.com/
